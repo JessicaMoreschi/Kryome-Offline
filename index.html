@@ -2,84 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sketch</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="libraries/p5.min.js"></script>
     <!-- <script src="libraries/p5.sound.min.js"></script> -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-      </style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+    </style>
   </head>
 
   <body>
     <script src="sketch.js"></script>
     <script src="cards.js"></script>
 
-    <div class="device" id="device" >
+    <div class="device" id="device">
       <!-- parte alta card e level -->
       <div class="cardPlace" id="cardPlace">
         <button class="roundedTag" id="roundIconCard">
           <h3 id="whiteTextBtn">Place here your card</h3>
         </button>
-        </div>
+      </div>
       <div class="levPlace" id="levPlace">
         <!-- <button class="lev" id="levActive"><h3>L1</h3></button>
         <button class="lev"><h3>L2</h3></button>
         <button class="lev"><h3>L3</h3></button>
         <button class="lev"><h3>L4</h3></button> -->
-        <button class="lev" id="levActive"><img src="./assets/LV1.png" alt="L1"></button>
-        <button class="lev"><img src="./assets/LV2.png" alt="L2"></button>
-        <button class="lev"><img src="./assets/LV3.png" alt="L3LV3.png"></button>
-        <button class="lev"><img src="./assets/LV4.png" alt="L4LV4.png"></button>
+        <button class="lev" id="levActive">
+          <img src="./assets/LV1.png" alt="L1" />
+        </button>
+        <button class="lev"><img src="./assets/LV2.png" alt="L2" /></button>
+        <button class="lev">
+          <img src="./assets/LV3.png" alt="L3LV3.png" />
+        </button>
+        <button class="lev">
+          <img src="./assets/LV4.png" alt="L4LV4.png" />
+        </button>
       </div>
       <!-- menu navigazione basso -->
       <div class="navBar">
-        <div class="navBarSegment" >
+        <div class="navBarSegment">
           <div class="navBarIcon">
             <div class="navBarIndicator">
-              <img src="./assets/heroIcon.png" alt="icon">
+              <img src="./assets/heroIcon.png" alt="icon" />
             </div>
           </div>
           <h4 class="navBarText">Hero</h4>
         </div>
-        <div class="navBarSegment" >
+        <div class="navBarSegment">
           <div class="navBarIcon">
             <div class="navBarIndicator">
-              <img src="./assets/torch.png" alt="icon">
+              <img src="./assets/torch.png" alt="icon" />
             </div>
           </div>
           <h4 class="navBarText">Torch</h4>
         </div>
-        <div class="navBarSegment" >
+        <div class="navBarSegment">
           <div class="navBarIcon">
             <div class="navBarIndicator">
-              <img src="./assets/diary.png" alt="icon">
+              <img src="./assets/diary.png" alt="icon" />
             </div>
           </div>
           <h4 class="navBarText">Diary</h4>
         </div>
       </div>
 
-       <!-- player panel -->
-       <div class="torchPanel" id="playerPanel" style="height: 120px">
+      <!-- player panel -->
+      <div class="torchPanel" id="playerPanel" style="height: 120px">
         <div class="torchLeftContent">
           <div class="torchHeader">
-              <div class="roundIcon">
-                <img src="./assets/heroIcon.png" alt="icon">
-              </div>
-              <h2>Tools and Resources</h2>
+            <div class="roundIcon">
+              <img src="./assets/heroIcon.png" alt="icon" />
+            </div>
+            <h2>Tools and Resources</h2>
           </div>
           <div class="torchActions" id="playerActions">
             <button class="squareTag">
-              <img class="labelIcon" src="./assets/tool.png" alt="icon">
-              <h3 id = "toolsNmbr">2</h3>
+              <img class="labelIcon" src="./assets/tool.png" alt="icon" />
+              <h3 id="toolsNmbr">2</h3>
             </button>
             <button class="squareTag">
-              <img class="labelIcon" src="./assets/resources.png" alt="icon">
+              <img class="labelIcon" src="./assets/resources.png" alt="icon" />
               <h3 id="resNmbr">?</h3>
             </button>
           </div>
@@ -88,7 +94,7 @@
           <div class="playerImg"></div>
           <div class="playerLabel">
             <h2>Jael</h2>
-            <p >Explorer</p>
+            <p>Explorer</p>
           </div>
         </div>
       </div>
@@ -101,55 +107,58 @@
 
       <!-- Diary panel -->
       <div class="diaryPanel" id="diaryPanel">
-
-          <div class="torchHeader">
-              <div class="roundIcon">
-                <img src="./assets/diary.png" alt="icon">
-              </div>
-              <h2>Diary</h2>
+        <div class="torchHeader">
+          <div class="roundIcon">
+            <img src="./assets/diary.png" alt="icon" />
           </div>
+          <h2>Diary</h2>
+        </div>
 
         <div class="device3" id="diaryHtmlDiv"></div>
       </div>
 
-
       <!-- POPUP ERRORS -->
-       <!-- error torch not working -->
-       <div class="cardPanel" id="errorPanel">
+      <!-- error torch not working -->
+      <div class="cardPanel" id="errorPanel">
         <h1 id="cardPanelTitle">Error 202: Torch not working</h1>
-        <p id="cardPanelText">Torch not working. Reach Alain at <i>The Forge</i> to fix it</p>
+        <p id="cardPanelText">
+          Torch not working. Reach Alain at <i>The Forge</i> to fix it
+        </p>
         <div class="cardPanelActions">
           <button class="roundedTag" id="closeError">
-            <img class="labelIcon" src="./assets/close.png" alt="icon">
+            <img class="labelIcon" src="./assets/close.png" alt="icon" />
             <h3>Close</h3>
           </button>
         </div>
       </div>
 
-       <!-- error put a card -->
+      <!-- error put a card -->
       <div class="cardPanel" id="errorCardPanel">
         <h1 id="cardPanelTitle">Card required</h1>
-        <p id="cardPanelText">Place a card on the top of the phone to reveal it</p>
+        <p id="cardPanelText">
+          Place a card on the top of the phone to reveal it
+        </p>
         <div class="cardPanelActions">
           <button class="roundedTag" id="closePanel">
-            <img class="labelIcon" src="./assets/close.png" alt="icon">
+            <img class="labelIcon" src="./assets/close.png" alt="icon" />
             <h3>Close</h3>
           </button>
         </div>
       </div>
 
-       <!-- error Level -->
-       <div class="cardPanel" id="errorLevelPanel">
+      <!-- error Level -->
+      <div class="cardPanel" id="errorLevelPanel">
         <h1 id="cardPanelTitle">Level blocked</h1>
-        <p id="cardPanelText">You don't have the requirements to access this level. </p>
+        <p id="cardPanelText">
+          You don't have the requirements to access this level.
+        </p>
         <div class="cardPanelActions">
           <button class="roundedTag" id="closeLevelPanel">
-            <img class="labelIcon" src="./assets/close.png" alt="icon">
+            <img class="labelIcon" src="./assets/close.png" alt="icon" />
             <h3>Close</h3>
           </button>
         </div>
       </div>
-
     </div>
   </body>
 </html>

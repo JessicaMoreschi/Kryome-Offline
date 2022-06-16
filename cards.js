@@ -277,7 +277,7 @@ const dataCard = {
     "titleDisp": "flex",
     "title": "<b>Lev2</b>: Recap",
     "iconDisp": "flex",
-    "image": "./assets/vikar.jpg",
+    "image": "./assets/ostia_msg.png",
     "icon": "./assets/dome.png",
     "imageDisp": "flex",
     "descriptionDisp": "block",
@@ -306,7 +306,7 @@ const dataCard = {
     "titleDisp": "flex",
     "title": "<b>Lev3</b>: Recap",
     "iconDisp": "flex",
-    "image": "./assets/vikar.jpg",
+    "image": "./assets/tersa_msg.png",
     "icon": "./assets/dome.png",
     "imageDisp": "flex",
     "descriptionDisp": "block",
@@ -692,9 +692,116 @@ const dataCard = {
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
-    "choice1Fn": "hideMyCard('closeElm')",
+    "choice1Fn": "hideMyCard('Vikpt2b')",
     "closeBtnDisp": "flex"
   },],
+
+
+  //card level 5
+  "elmVikar2b": [{
+    "titleDisp": "none",
+    "iconDisp": "none",
+    "imageDisp": "flex",
+    "srcIframe": "./elmstory/ElmStory_Solon/index.html",
+    "descriptionDisp": "none",
+    "toolTagDisp": "none",
+    "resourceTagDisp": "none",
+    "choice1Fn": "hideMyCard('end')",
+    "closeBtnDisp": "flex"
+  }, ],
+  "l5card1": [{
+    "titleDisp": "block",
+    "title": "You've reconnectd the world!",
+    "imageDisp": "flex",
+    "image": "./assets/torch.jpg",
+    "descriptionDisp": "block",
+    "margin": "50% - 141px",
+    "description": "This is what happens in the end",    
+    "choice1Fn": "hideMyCard('l5c2')",
+    "closeBtnDisp": "flex"
+  },],
+  "l5card2": [{
+    "titleDisp": "flex",
+    "title": "You've got messages!",
+    "iconDisp": "none",
+    "imageDisp": "none",
+    "descriptionDisp": "block",
+    "description": "Check the torch to read again the kind words from the friends you made along the way.",
+    "toolTagDisp": "none",
+    "resourceTagDisp": "none",
+    "choice1Disp": "flex",
+    "choice1": "See them",
+    "choice1Src": "./assets/arrow.png",
+    "choice1Fn": "hideMyCard('l5c3')",
+    "choice2": "Close",
+    "choice2Src": "./assets/close.png",
+    "choice2Fn": "hideMyCard('l5c3c')",
+    "closeBtnDisp": "none"
+  }, ],
+  "l5card3": [{
+    "titleDisp": "flex",
+    "title": "What now?",
+    "iconDisp": "none",
+    "imageDisp": "none",
+    "descriptionDisp": "block",
+    "description": "Now that Kryome is one again you can choose what to do. You can rest and finish the game or you can keep exploring this world as Jael.",
+    "toolTagDisp": "none",
+    "resourceTagDisp": "none",
+    "choice1Disp": "flex",
+    "choice1" : "Keep going",
+    "choice1Src": "./assets/arrow.png",
+    "choice1Fn": "hideMyCard()",
+    "choice2Disp": "flex",
+    "choice2" : "End the game",
+    "choice2Src": "./assets/close.png",
+    "choice2Fn": "hideMyCard('l5c4')",
+    "closeBtnDisp": "none"
+  }, ],
+  "l5card4": [{
+    "titleDisp": "flex",
+    "title": "...and what about your world?",
+    "iconDisp": "none",
+    "imageDisp": "none",
+    "descriptionDisp": "block",
+    "description": "Do you know that 3.7 Billion people are still disconnected?",
+    "toolTagDisp": "none",
+    "resourceTagDisp": "none",
+    "choice1Disp": "flex",
+    "choice1" : "Discover more",
+    "choice1Src": "./assets/arrow.png",
+    "choice1Fn": "hideMyCard('goToWebsite')",
+    "choice2Disp": "none",
+    "closeBtnDisp": "none"
+  }, ],
+
+  "msg1": [{
+    "titleDisp": "block",
+    "title": "From: <b>Alain</b>",
+    "imageDisp": "flex",
+    "image": "./assets/alain_msg.png",
+    "descriptionDisp": "block",
+    "description": "This is Alain from the Forge: thank you Jael, for reconnecting the Mountain! Come visit me, our village is in the throes of a never-before-seen celebration, they will celebrate you as a heroine!",
+    "choice1Fn": "hideMyCard('closeElm')",
+    "closeBtnDisp": "flex"
+  }, ],
+  "msg2": [{
+    "titleDisp": "block",
+    "title": "From: <b>Hestia</b>",
+    "imageDisp": "flex",
+    "image": "./assets/ostia_msg.png",
+    "descriptionDisp": "block",
+    "description": "Jael. I have much to learn from your boldness and cunning. The fire of knowledge has won! The era of ice and darkness ends.",
+    "closeBtnDisp": "flex"
+  }, ],
+  "msg3": [{
+    "titleDisp": "block",
+    "imageDisp": "flex",
+    "image": "./assets/tersa_msg.png",
+    "title": "From: <b>Tersa</b>",
+    "descriptionDisp": "block",
+    "description": "...How do you use this goddamn thing? Is it recording? Ah, that's it! Child, you did really well. You changed my mind, there are a lot of valuable tips I can access online for my greenhouse! Besides, my plants look happy too. Thank you, Jael!",
+    "closeBtnDisp": "flex"
+  }, ],
 };
 
 
@@ -808,9 +915,22 @@ const dataRadar = {
     "alertIcon": "./assets/cryp.png",
     "cryptidStatus": "active", //"disabled" or "" or "active"
   },],
+  "msgTorch": [{
+    "torchDisp": "flex",
+    "radarDisp": "flex",
+    "alertDisp": "none",
+    "messageDisp": "flex",
+  },],
+  "msgTorchOpen": [{
+    "torchDisp": "flex",
+    "radarDisp": "none",
+    "alertDisp": "none",
+    "toolDisp": "none",
+    "messageDisp": "flex",
+  },],
 };
 // Radar layout
-const torchP = ({ torchDisp, radarDisp, alertDisp, alertIcon, panelStatus, toolStatus, resourcesStatus, cryptidStatus }) => `
+const torchP = ({ torchDisp, radarDisp, alertDisp, alertIcon, panelStatus, toolDisp = "flex", toolStatus, resourcesStatus, cryptidStatus, messageDisp = "none" }) => `
 <div class="torchPanel" style="display:${torchDisp}">
         <div class="torchLeftContent">
           <div class="torchHeader" id="${panelStatus}">
@@ -818,6 +938,9 @@ const torchP = ({ torchDisp, radarDisp, alertDisp, alertIcon, panelStatus, toolS
                 <img src="./assets/torch.png" alt="icon">
               </div>
               <h2>Torch Panel</h2>
+              <div class="roundIcon" id="messageOpen" onclick="openMessages()" style="margin-left:auto; display:${messageDisp}">
+                <img src="./assets/message.svg" alt="icon">
+              </div>
           </div>
           <div class="torchRadar" style="display:${radarDisp}">
             <img class="radarImage" src="./assets/radar.svg" style="display:flex">
@@ -826,7 +949,7 @@ const torchP = ({ torchDisp, radarDisp, alertDisp, alertIcon, panelStatus, toolS
               <h3>Object detected</h3>
             </div>
           </div>
-          <div class="torchActions" id="${toolStatus}">
+          <div class="torchActions" id="${toolStatus}" style="display:${toolDisp}">
             <button class="squareTag">
               <img class="labelIcon" src="./assets/tool.png" alt="icon">
               <h3>Tools</h3>
@@ -841,5 +964,6 @@ const torchP = ({ torchDisp, radarDisp, alertDisp, alertIcon, panelStatus, toolS
               <h3>Cryptid</h3>
             </button>
           </div>
+          <div class="device3" id="messagesHtmlDiv"></div>
        </div>
   </div>` ;
