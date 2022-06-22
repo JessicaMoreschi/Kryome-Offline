@@ -1,0 +1,861 @@
+/*
+  @license @elmstorygames/storyteller 0.7.0 / ESG Storyteller
+  Copyright (c) Elm Story Games LLC. All rights reserved.
+  Storyworld content (c) original author(s).
+  Generated: 1650076362176 | https://elmstory.com
+*/
+
+:root {
+  --text-size: 62.5%;
+  --primary-color:  #49454F;
+  --primary-color-brighter:  #49454F;
+  --primary-color-darker:  #49454F;
+  --primary-color-darkest: #49454F;
+  --warning-color: #49454F;
+  --white: hsl(0, 0%, 97%);
+  --black:  #49454F;
+  --min-interaction-height: 4.4rem;
+  --runtime-width: 68rem;
+  --input-selection-text-color: var(--white);
+  --btn-text-color: var(--white);
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-color);
+  --settings-z-index: 100;
+  --title-bar-height: var(--min-interaction-height);
+  --title-bar-z-index: 10;
+  --event-choice-text-color: var(--text-color)
+}
+
+html[data-font=SANS] {
+  --font-family: "Roboto Sans"
+}
+
+html[data-font=SERIF] {
+  --font-family: "Roboto Sans"
+}
+
+html[data-theme=BOOK] {
+  --background-color: transparent !important;
+  --text-color: var(--black);
+  --btn-background-color: var(--primary-color);
+  --btn-background-color-hover: var(--primary-color-brighter);
+  --btn-border: none;
+  --btn-border-hover-color: transparent;
+  --renderer-border-color: hsl(0, 0%, 92%);
+  --title-card-world-version-color: hsl(0, 0%, 70%);
+  --title-bar-background-color: var(--white);
+  --settings-header-text-color: hsl(0, 0%, 60%);
+  --event-top-border: .1rem solid hsl(0, 0%, 94%);
+  --event-content-bottom-border: .1rem solid hsl(0, 0%, 88%);
+  --event-character-mask-border: .1rem solid hsl(0, 0%, 80%);
+  --event-character-reference-text-color: hsl(0, 0%, 70%);
+  --event-character-reference-past-text-color: hsl(0, 0%, 70%);
+  --event-choice-top-border-color:  #49454F;
+  --event-past-text-color: hsl(0, 0%, 70%);
+  --event-past-choice-text-color: hsl(0, 0%, 60%);
+  --event-past-choice-result-text-color: hsl(0, 0%, 30%)
+}
+
+html[data-theme=CONSOLE] {
+  --background-color: transparent !important;
+  --text-color: var(--black);
+  --btn-background-color: var(--primary-color);
+  --btn-background-color-hover: var(--primary-color-brighter);
+  --btn-border: none;
+  --btn-border-hover-color: transparent;
+  --renderer-border-color: hsl(0, 0%, 92%);
+  --title-card-world-version-color: hsl(0, 0%, 70%);
+  --title-bar-background-color: var(--white);
+  --settings-header-text-color: hsl(0, 0%, 60%);
+  --event-top-border: .1rem solid hsl(0, 0%, 94%);
+  --event-content-bottom-border: .1rem solid hsl(0, 0%, 88%);
+  --event-character-mask-border: .1rem solid hsl(0, 0%, 80%);
+  --event-character-reference-text-color: hsl(0, 0%, 70%);
+  --event-character-reference-past-text-color: hsl(0, 0%, 70%);
+  --event-choice-top-border-color:  #49454F;
+  --event-past-text-color: hsl(0, 0%, 70%);
+  --event-past-choice-text-color: hsl(0, 0%, 60%);
+  --event-past-choice-result-text-color: hsl(0, 0%, 30%)
+}
+
+#runtime {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 32rem
+}
+
+#runtime a {
+  color: var(--link-color);
+  cursor: pointer
+}
+
+#runtime a:hover {
+  color: var(--link-hover-color) !important
+}
+
+#runtime input {
+  border: none;
+  min-height: var(--min-interaction-height)
+}
+
+#runtime input::selection {
+  color: var(--input-selection-text-color) !important;
+  background: var(--primary-color-darkest) !important
+}
+
+#runtime button {
+  color: var(--primary-color);
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+
+  height: 32px !important;
+  padding: 6px 12px !important;
+  width: auto !important;
+  border-radius: 16px !important;
+  flex: none !important;
+}
+
+#runtime button:hover {
+  color: var(--primary-color-brighter);
+  cursor: pointer
+}
+
+#runtime .engine-warning-message {
+  color: var(--warning-color)
+}
+
+#runtime #world-update-toast {
+  position: absolute;
+  bottom: 0;
+  background:  #49454F;
+  height: auto;
+  left: 0;
+  right: 0;
+  box-sizing: content-box;
+  z-index: 1000;
+  background: var(--background-color);
+  display: grid;
+  grid-template-columns: auto 8rem;
+  padding: 1.4rem;
+  border-top: .1rem solid var(--renderer-border-color);
+  align-items: center
+}
+
+#runtime #world-update-toast span {
+  font-size: 1.6rem
+}
+
+#runtime #world-update-toast button {
+  font-size: 1.6rem
+}
+
+#runtime #world-update-toast button:disabled {
+  pointer-events: none;
+  opacity: 0
+}
+
+#runtime #settings {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  z-index: var(--settings-z-index);
+  overflow-y: auto
+}
+
+#runtime #settings #settings-content {
+  padding: 1.4rem
+}
+
+#runtime #settings #settings-content a {
+  color: var(--text-color)
+}
+
+#runtime #settings #settings-content a:hover {
+  text-decoration: underline
+}
+
+#runtime #settings #settings-content a.settings-active {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-underline-offset: .2rem
+}
+
+#runtime #settings #settings-content section {
+  margin-bottom: 1.8rem
+}
+
+#runtime #settings #settings-content section h1 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  border-bottom: .1rem solid var(--primary-color);
+  margin-bottom: 1.4rem;
+  font-weight: normal
+}
+
+#runtime #settings #settings-content section div {
+  margin-bottom: 1.4rem
+}
+
+#runtime #settings #settings-content section div span {
+  color: var(--renderer-border-color)
+}
+
+#runtime #settings #settings-content section div h2 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: .8rem;
+  border-bottom: .1rem solid var(--renderer-border-color);
+  font-weight: normal;
+  color: var(--settings-header-text-color)
+}
+
+#runtime #renderer {
+  width: 100%;
+  height: 100%
+}
+
+#runtime #title-card {
+  justify-content: center;
+  align-content: center;
+  min-width: 28rem;
+  height: calc(100% - 2.4rem);
+  display: grid;
+  text-align: center
+}
+
+#runtime #title-card-studio-title {
+  font-size: 1.2rem;
+  margin-bottom: 2.4rem;
+  font-style: italic;
+  width: 100%;
+  padding-bottom: .4rem;
+  display: none;
+}
+
+#runtime #title-card-world-title {
+  font-size: 4.2rem;
+  margin-bottom: 1rem;
+  padding: 0 8rem;
+  display:none;
+}
+
+#runtime #title-card-world-version {
+  font-size: 1.2rem;
+  margin-bottom: 2.8rem;
+  color: var(--title-card-world-version-color);
+  display: none;
+}
+
+#runtime #title-card-world-designer {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  font-style: italic
+}
+
+#runtime #title-card-btns {
+  width: auto;
+  margin: 0 auto;
+}
+
+#runtime #title-card-btns button {
+  background: #ffffff !important;
+  display: flex;
+  width: 100%;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-bottom: none;
+  margin-bottom: 0;
+  border-radius: 0;
+  transition: color .2s;
+  color: var(--text-color);
+}
+
+#runtime #title-card-btns button:last-child {
+  display: none !important;
+}
+
+#runtime #title-card-btns button .event-content-choice-icon {
+  color: var(--primary-color);
+  padding-right: .6rem;
+  display: none;
+}
+
+#runtime #title-card-btns button:hover {
+  background: #ffffff;
+  color: var(--primary-color-brighter)
+}
+
+#runtime #title-card-btns button:last-child {
+  margin-bottom: 0;
+  border: none
+}
+
+#runtime #title-card-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  background: var(--background-color);
+  display:none
+}
+
+#runtime .title-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--title-bar-height);
+  border-bottom: .1rem solid var(--renderer-border-color);
+  background-color: transparent;
+  z-index: var(--title-bar-z-index);
+  display: inline-grid
+}
+
+#runtime .title-bar-title {
+  display: block;
+  text-align: center;
+  line-height: var(--title-bar-height);
+  font-size: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: transparent !important;
+}
+
+#runtime .title-bar button {
+  background: transparent;
+  border: none
+}
+
+#runtime .title-bar button path {
+  fill: var(--primary-color)
+}
+
+#runtime .title-bar button:hover path {
+  fill: var(--primary-color-brighter)
+}
+
+#runtime #settings-title-bar {
+  display: block
+}
+
+#runtime #settings-title-bar button {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+#runtime #live-event-stream-title-bar {
+  grid-template-columns: var(--title-bar-height) 1fr var(--title-bar-height) var(--title-bar-height)
+}
+
+#runtime #live-event-stream-title-bar .live-event-stream-title-bar-audio-muted svg path {
+  fill: transparent
+}
+
+#runtime #live-event-stream {
+  position: absolute;
+  top: var(--title-bar-height);
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0 auto
+}
+
+#runtime #live-events {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  min-height: 100%
+}
+
+#runtime .live-event {
+  overflow: hidden;
+  transition: filter 1s, opacity 1s;
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translate(0)
+}
+
+#runtime .live-event.live-event-past {
+  transition: filter 1s, opacity 1s;
+  filter: grayscale(100%);
+  opacity: .4
+}
+
+#runtime .event-content {
+  padding-top: 1.4rem;
+  border-bottom: var(--event-content-bottom-border);
+  height: auto
+}
+
+#runtime .event-content h1,
+#runtime .event-content h2,
+#runtime .event-content h3,
+#runtime .event-content h4 {
+  font-weight: normal !important;
+  letter-spacing: 0
+}
+
+#runtime .event-content .event-content-with-persona p,
+#runtime .event-content .event-content-with-persona h1,
+#runtime .event-content .event-content-with-persona h2,
+#runtime .event-content .event-content-with-persona h3,
+#runtime .event-content .event-content-with-persona h4 {
+  padding-left: 0
+}
+
+#runtime .event-content .event-content-with-persona ol,
+#runtime .event-content .event-content-with-persona ul {
+  margin-left: 1.4rem
+}
+
+#runtime .event-content .event-content-with-persona blockquote {
+  margin-left: 1.5rem
+}
+
+#runtime .event-content .event-character-mask {
+  aspect-ratio: 4/5;
+  width: calc(100% - 2.8rem);
+  border-radius: .4rem;
+  border: var(--event-character-mask-border);
+  padding: .4rem
+}
+
+#runtime .event-content .event-character-mask .event-character-mask-portrait {
+  width: 100%;
+  height: 100%;
+  border-radius: .2rem;
+  box-sizing: border-box;
+  background-size: cover
+}
+
+#runtime .event-content .event-character-reference {
+  min-height: 2.5rem;
+  color: var(--event-character-reference-text-color);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  border-bottom: .1rem solid var(--renderer-border-color)
+}
+
+#runtime .event-content .event-content-image {
+  aspect-ratio: 16/9;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 1.4rem;
+  display: grid;
+  align-items: center;
+  justify-items: center
+}
+
+#runtime .event-content .event-content-image img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  aspect-ratio: 16/9
+}
+
+#runtime .event-content .event-content-image .event-content-image-loading,
+#runtime .event-content .event-content-image .event-content-image-loading:after {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem
+}
+
+#runtime .event-content .event-content-image .event-content-image-loading {
+  border-top: .4rem solid var(--primary-color-darkest);
+  border-right: .4rem solid var(--primary-color-darkest);
+  border-bottom: .4rem solid var(--primary-color-darkest);
+  border-left: .4rem solid var(--primary-color);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: spinner 1.1s infinite linear;
+  animation: spinner 1.1s infinite linear
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0)
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0)
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+#runtime .event-content .event-content-image .event-content-image-error {
+  width: 100%;
+  height: 100%;
+  background-repeat: none;
+  background-size: contain
+}
+
+#runtime .event-content .event-content-link {
+  transition: color .2s;
+  color: var(--text-color);
+  text-decoration-color: var(--primary-color) !important
+}
+
+#runtime .event-content .event-content-link:hover {
+  color: var(--primary-color)
+}
+
+#runtime .event-content :last-child {
+  margin-bottom: 0 !important
+}
+
+#runtime .event-content p,
+#runtime .event-content h1,
+#runtime .event-content h2,
+#runtime .event-content h3,
+#runtime .event-content h4,
+#runtime .event-content ol,
+#runtime .event-content ul,
+#runtime .event-content blockquote {
+  padding: 0 1.4rem;
+  margin-bottom: 1.4rem;
+  hyphens: auto;
+  font-size: 1.6rem
+}
+
+#runtime .event-content p {
+  line-height: 2.8rem
+}
+
+#runtime .event-content ol {
+  list-style-type: decimal !important
+}
+
+#runtime .event-content ul {
+  list-style-type: disc !important
+}
+
+#runtime .event-content h1 {
+  font-size: 3.2rem
+}
+
+#runtime .event-content h2 {
+  font-size: 2.4rem
+}
+
+#runtime .event-content h3 {
+  font-size: 1.8rem
+}
+
+#runtime .event-content h4 {
+  font-size: 1.6rem
+}
+
+#runtime .event-content ol,
+#runtime .event-content ul {
+  padding-left: 2.8rem;
+  list-style-position: inside
+}
+
+#runtime .event-content ol li,
+#runtime .event-content ul li {
+  margin-left: 0;
+  margin-bottom: .8rem
+}
+
+#runtime .event-content ul li:before {
+  content: "";
+  margin-left: -.6rem
+}
+
+#runtime .event-content blockquote {
+  margin-left: 3rem;
+  padding-left: 1.3rem;
+  font-style: italic;
+  border-left: .1rem solid var(--primary-color);
+  line-height: 2.8rem;
+  padding-right: 4.4rem
+}
+
+#runtime .event-content .expression {
+  border-bottom: .1rem dashed var(--primary-color)
+}
+
+#runtime .event-content .expression-error {
+  border-bottom: .1rem dashed  #49454F
+}
+
+#runtime .event-content .event-content-character-highlight {
+  border-bottom: .1rem dashed var(--primary-color)
+}
+
+#runtime .event-content-choices,
+#runtime .event-content-input-result {
+  padding-top: 1.4rem;
+  display: grid;
+  align-items: center
+}
+
+#runtime .event-content-choices button,
+#runtime .event-content-input-result button {
+  box-sizing: border-box;
+  background: none;
+  text-align: left !important;
+  border: none !important;
+  border-radius: 0 !important;
+  line-height: 2.8rem;
+  width: 100%;
+  word-break: normal;
+  hyphens: auto;
+  padding: 1.4rem 0;
+  font-size: 1.6rem;
+  border-top: .1rem solid var(--event-choice-top-border-color) !important;
+  color: var(--event-choice-text-color)
+}
+
+#runtime .event-content-choices button.event-content-choice-passthrough,
+#runtime .event-content-input-result button.event-content-choice-passthrough {
+  display: grid;
+  align-items: center;
+  color: var(--primary-color)
+}
+
+#runtime .event-content-choices button:hover,
+#runtime .event-content-input-result button:hover {
+  color: var(--primary-color-brighter)
+}
+
+#runtime .event-content-choices button .event-content-choice-icon,
+#runtime .event-content-input-result button .event-content-choice-icon {
+  color: var(--primary-color);
+  transition: color .2s;
+  padding-right: .6rem
+}
+
+#runtime .event-content-input-result .event-content-choice {
+  height: 100%
+}
+
+#runtime .event-content-input-result button {
+  height: 100%;
+  padding: 1.4rem 0 !important
+}
+
+#runtime .event-content-choice {
+  display: grid;
+  padding: 0 1.4rem !important;
+  border: none !important
+}
+
+#runtime .event-content-choice:last-child {
+  margin-bottom: 0
+}
+
+#runtime .event-content-choice button:disabled,
+#runtime .event-content-loopback button:disabled {
+  cursor: not-allowed;
+  color: var(--event-past-choice-text-color)
+}
+
+#runtime .event-content-loopback button {
+  display: grid;
+  align-items: center;
+  color: var(--primary-color)
+}
+
+#runtime .event-content-choice-result button:disabled,
+#runtime .event-content-input-result button:disabled {
+  color: var(--event-past-choice-result-text-color)
+}
+
+#runtime .event-content-choice .closed-route {
+  border-top: .1rem dashed var(--warning-color) !important;
+  color: var(--warning-color) !important
+}
+
+#runtime .event-content-input-result button:disabled {
+  cursor: not-allowed;
+  padding: 0 1.4rem;
+  height: 100%
+}
+
+#runtime .event-content-input {
+  width: 100%
+}
+
+#runtime .event-content-input form {
+  padding: 0 1.4rem;
+  margin: 0
+}
+
+#runtime .event-content-input form .event-content-input-wrapper {
+  border-top: .1rem solid var(--event-choice-top-border-color);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.4rem 0
+}
+
+#runtime .event-content-input form .event-content-input-wrapper .event-content-input-cta {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center
+}
+
+#runtime .event-content-input form .event-content-input-wrapper input {
+  height: 100%;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  padding-left: 1.6rem;
+  padding-bottom: 1.6rem;
+  box-sizing: border-box
+}
+
+#runtime .event-content-input form .event-content-input-wrapper button {
+  width: var(--min-interaction-height);
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  position: relative
+}
+
+#runtime .event-content-input form .event-content-input-wrapper button svg {
+  position: absolute;
+  left: 0;
+  top: -.4rem
+}
+
+#runtime .event-content-input form .event-content-input-wrapper button svg path {
+  fill: var(--primary-color)
+}
+
+#runtime .event-content-input form .event-content-input-wrapper button:hover {
+  background: transparent
+}
+
+#runtime .event-content-input form .event-content-input-wrapper button:hover path {
+  fill: var(--primary-color-brighter)
+}
+
+#runtime .event-content-result {
+  width: 100%;
+  text-align: right;
+  color: var(--primary-color);
+  font-size: 1.2rem
+}
+
+#runtime .event-content-result-date {
+  font-size: 1rem;
+  color: var(--event-past-text-color)
+}
+
+/* @font-face {
+  font-family: Literata;
+  src: url(../fonts/Literata.ttf)
+}
+
+@font-face {
+  font-family: "Roboto Serif";
+  src: url(../fonts/RobotoSerif.ttf)
+} */
+
+@font-face {
+  font-family: "Roboto Sans";
+  src: url('../fonts/Roboto.ttf')
+}
+
+
+/* @font-face {
+  font-family: Inter;
+  src: url(../fonts/Inter.ttf)
+} */
+
+::-webkit-scrollbar {
+  width: 0rem;
+  height: 4.4rem
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color)
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-brighter)
+}
+
+::-webkit-scrollbar-track {
+  border-left: .1rem solid var(--renderer-border-color)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: var(--font-family);
+  border: none
+}
+
+*:focus {
+  outline: none
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+  overflow: hidden
+}
+
+html[data-size=DEFAULT] {
+  font-size: var(--text-size)
+}
+
+@media only screen and (min-width: 43em) {
+  html[data-size=DEFAULT] #runtime {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: var(--runtime-width);
+    border-left: .1rem solid var(--renderer-border-color);
+    border-right: .1rem solid var(--renderer-border-color);
+    height: 100%
+  }
+}
+
+html[data-size=LARGE] {
+  font-size: 78.125% !important
+}
+
+@media only screen and (min-width: 54em) {
+  html[data-size=LARGE] #runtime {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: var(--runtime-width);
+    border-left: .1rem solid var(--renderer-border-color);
+    border-right: .1rem solid var(--renderer-border-color);
+    height: 100%
+  }
+}
