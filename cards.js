@@ -281,7 +281,7 @@ const dataCard = {
     "icon": "./assets/dome.png",
     "imageDisp": "flex",
     "descriptionDisp": "block",
-    "description": "Following the unusual growth of the plants, you go deeper in a cave, which is warmer yet darker. You manage to see through the darkness with the light of the torch. Now you see there are some paintings on both sides of the wall. <br>Some inscriptions are written in indecipherable languages and alphabets. <br>Are these paintings from the World of Before? Maybe they have been made in different ages… Although one thing seems to be certain: this cave is older than humanity, and it must have been giving shelter to many forms of civilization during history.<br>You just wonder, who are the current dwellers?",
+    "description": "After saying goodbye to Alain, you continue your adventure by going up the mountain. You managed to find your way through the dense snow, taking advantage of the improvements Alain made to the Torch. <br>Shreds of history surfaced from the unknown: you came across the mysterious ruins of a Dome, which appeared to have been burned by flames but remained intact and hibernated in the frost. One document, one name stuck in your memory: Tersa.<br>But that's not all... Finally you discover an ancient shelter where it turns out that there is a Dome twin to Alain's right on the mountain. Once you reach it, you learn about DT026-B, a village devoted to code, where you have made the acquaintance of a mysterious vestal priestess named Hestia who has provided you with valuable information about your mission: on top of the Mountain, a powerful artificial intelligence blocks access to knowledge and connection. You will therefore have to reach her to defuse the blockade and reconnect all the Domes on the Mountain.",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
     "choice1Disp": "flex",
@@ -310,7 +310,7 @@ const dataCard = {
     "icon": "./assets/dome.png",
     "imageDisp": "flex",
     "descriptionDisp": "block",
-    "description": "Following the unusual growth of the plants, you go deeper in a cave, which is warmer yet darker. You manage to see through the darkness with the light of the torch. Now you see there are some paintings on both sides of the wall. <br>Some inscriptions are written in indecipherable languages and alphabets. <br>Are these paintings from the World of Before? Maybe they have been made in different ages… Although one thing seems to be certain: this cave is older than humanity, and it must have been giving shelter to many forms of civilization during history.<br>You just wonder, who are the current dwellers?",
+    "description": "You leave the village of Hestia and resume your adventure. The Mountain becomes more impassable and rugged. Weariness almost overwhelms you, until in the Mountain's icy night, you catch a glimpse of a dome that emits a warm light and looks almost like an exotic greenhouse: a Dome that was not marked on the map. <br>You thus make acquaintance with DT009, or the Oasis. Among the bizarre, plant-obsessed inhabitants of this village, you make acquaintance with the most bizarre of them all, Tersa.  Sound familiar?<br>Its name is not new to you: you came across it in the mysterious ruins of a village burned by flames. So you discover the story of Tersa and the Oasis, of the dream of greening the world and making it as hospitable as in the World of Before, but of the stubborn revulsion to reclaim connection. After long discussions, you have managed to convince Tersa that technology can also be beneficial and that your mission can bring improvement for all.<br>Tersa then suggests your next destination: there is a mysterious cave nearby, where a kind of plant grows that should not grow there, as if there were a source of heat coming from inside the rock walls...<br></br>You decide to go and investigate, but what you discover is not just a cave.<br>It is in fact the last Dome of the Mountain.",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
     "choice1Disp": "flex",
@@ -602,7 +602,7 @@ const dataCard = {
     "titleDisp": "none",
     "iconDisp": "none",
     "imageDisp": "flex",
-    "srcIframe": "./elmstory/ElmStory_Solon/index.html", //here new link
+    "srcIframe": "./elmstory/ElmStory_V1/index.html", //here new link
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
@@ -631,7 +631,7 @@ const dataCard = {
     "titleDisp": "none",
     "iconDisp": "none",
     "imageDisp": "flex",
-    "srcIframe": "./elmstory/ElmStory_Solon/index.html", //here new link
+    "srcIframe": "./elmstory/ElmStory_Cell/index.html", //here new link
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
@@ -660,7 +660,7 @@ const dataCard = {
     "titleDisp": "none",
     "iconDisp": "none",
     "imageDisp": "flex",
-    "srcIframe": "./elmstory/ElmStory_Solon/index.html", //here new link
+    "srcIframe": "./elmstory/ElmStory_Lab/index.html", //here new link
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
