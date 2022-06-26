@@ -698,17 +698,6 @@ const dataCard = {
 
 
   //card level 5
-  // "elmVikar2b": [{
-  //   "titleDisp": "none",
-  //   "iconDisp": "none",
-  //   "imageDisp": "flex",
-  //   "srcIframe": "./elmstory/ElmStory_Solon/index.html",
-  //   "descriptionDisp": "none",
-  //   "toolTagDisp": "none",
-  //   "resourceTagDisp": "none",
-  //   "choice1Fn": "hideMyCard('end')",
-  //   "closeBtnDisp": "flex"
-  // }, ],
   "l5card1": [{
     "titleDisp": "block",
     "title": "You've reconnectd the world!",
