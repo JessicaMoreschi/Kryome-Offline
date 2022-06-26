@@ -688,27 +688,27 @@ const dataCard = {
     "titleDisp": "none",
     "iconDisp": "none",
     "imageDisp": "flex",
-    "srcIframe": "./elmstory/ElmStory_Solon/index.html", //here new link
-    "descriptionDisp": "none",
-    "toolTagDisp": "none",
-    "resourceTagDisp": "none",
-    "choice1Fn": "hideMyCard('Vikpt2b')",
-    "closeBtnDisp": "flex"
-  },],
-
-
-  //card level 5
-  "elmVikar2b": [{
-    "titleDisp": "none",
-    "iconDisp": "none",
-    "imageDisp": "flex",
-    "srcIframe": "./elmstory/ElmStory_Solon/index.html",
+    "srcIframe": "./elmstory/ElmStory_V2/index.html", //here new link
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
     "choice1Fn": "hideMyCard('end')",
     "closeBtnDisp": "flex"
-  }, ],
+  },],
+
+
+  //card level 5
+  // "elmVikar2b": [{
+  //   "titleDisp": "none",
+  //   "iconDisp": "none",
+  //   "imageDisp": "flex",
+  //   "srcIframe": "./elmstory/ElmStory_Solon/index.html",
+  //   "descriptionDisp": "none",
+  //   "toolTagDisp": "none",
+  //   "resourceTagDisp": "none",
+  //   "choice1Fn": "hideMyCard('end')",
+  //   "closeBtnDisp": "flex"
+  // }, ],
   "l5card1": [{
     "titleDisp": "block",
     "title": "You've reconnectd the world!",
