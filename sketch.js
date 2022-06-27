@@ -117,7 +117,7 @@ function draw() {
   } else if (keyIsDown(52)) {
     hideMyCard('l3c4')//lev4
   } else if (keyIsDown(53)) {
-    hideMyCard('end')
+    hideMyCard('checkC')
   }
   
 }//end draw

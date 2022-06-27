@@ -706,7 +706,7 @@ const dataCard = {
     "image": "./assets/ending.jpg",
     "descriptionDisp": "block",
     "margin": "50% - 141px",
-    "description": "This is what happens in the end",    
+    "description": "Now Kryome is reconnected again!",    
     "choice1Fn": "hideMyCard('l5c2')",
     "closeBtnDisp": "flex"
   },],
