@@ -68,6 +68,7 @@ function setup() {
 function draw() {
 
   online = navigator.onLine;
+  console.log(online);
 
   //check if the connection has changed
   if (online != testonline) {
@@ -99,10 +100,10 @@ function draw() {
 
   //when to fire showMyCard()
   if (millis() - lastTimeCheck > stampSpeed) {
-    if ((drawIndex >= 2 && (cardCounter == -3 || cardCounter == -2 || cardCounter == -1 || cardCounter == 0 || cardCounter == 14 || cardCounter == 31)) && card == false)
+    if ((drawIndex >= 2 && (cardCounter == -3 || cardCounter == -2 || cardCounter == -1 || cardCounter == 0 || cardCounter == 14 || cardCounter == 31)) && card == false && online==false)
       showMyCard();
     lastTimeCheck = millis();
-    if (((redAvg < 10 && greenAvg < 10 && blueAvg < 10) || (keyIsDown(32))) && drawIndex > 4 && card == false)
+    if (((redAvg < 10 && greenAvg < 10 && blueAvg < 10) || (keyIsDown(32))) && drawIndex > 4 && card == false && online==false)
       showMyCard()
     drawIndex++;
     lastTimeCheck = millis()
@@ -329,6 +330,12 @@ function hideMyCard(n) {
     card = false;
   }
   //lev5
+  else if (n== 'checkC'){
+    cardHtmlDiv.innerHTML = "";
+    card = false;
+    currentLevel=5;
+    connectionAlterts('end')
+  }
   else if (n == 'end') {
     hideTopBar()
     cardHtmlDiv.innerHTML = dataCard.l5card1.map(alertHTML)
@@ -499,24 +506,29 @@ function openMessages() {
   }
 }
 
-function connectionAlterts() {
+function connectionAlterts(c) {
   //turn off connection alert
   if (online == true && currentLevel < 5) {
+    console.log("a");
     cardHtmlDiv.innerHTML = dataCard.alertConnectionOff.map(alertHTML);
     document.getElementById("closeBtnId").disabled = true;
     document.getElementById("closeBtnId").style.opacity = "0.38";
   }
   else if (online == false && currentLevel < 5) {
+    console.log("b");
     document.getElementById("closeBtnId").disabled = false;
     document.getElementById("closeBtnId").style.opacity = "1";
   }
   //turn on connection alert
-  else if (online == false && currentLevel == 5) {
+  else if (c=="end") {
+    console.log("c");
     cardHtmlDiv.innerHTML = dataCard.alertConnectionOn.map(alertHTML);
     document.getElementById("closeBtnId").disabled = true;
     document.getElementById("closeBtnId").style.opacity = "0.38";
+    currentLevel == 5
   }
   else if (online == true && currentLevel == 5) {
+    console.log("d");
     document.getElementById("closeBtnId").disabled = false;
     document.getElementById("closeBtnId").style.opacity = "1";
   }

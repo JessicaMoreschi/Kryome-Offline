@@ -63,11 +63,12 @@ const dataCard = {
   },],
   "alertConnectionOn": [{
     "titleDisp": "block",
-    "title": "Turn oon your connection!",
+    "title": "Turn on your connection!",
     "imageDisp": "none",
     "descriptionDisp": "block",
     "description": "You're almost there! Reconnect Kryome!",
-    "closeBtnDisp": "flex"
+    "closeBtnDisp": "flex",
+    "choice1Fn": "hideMyCard('end')"
   },],
 
   "card1": [{
@@ -692,7 +693,7 @@ const dataCard = {
     "descriptionDisp": "none",
     "toolTagDisp": "none",
     "resourceTagDisp": "none",
-    "choice1Fn": "hideMyCard('end')",
+    "choice1Fn": "hideMyCard('checkC')",
     "closeBtnDisp": "flex"
   },],
 
@@ -700,7 +701,7 @@ const dataCard = {
   //card level 5
   "l5card1": [{
     "titleDisp": "block",
-    "title": "You've reconnectd the world!",
+    "title": "You've reconnected the world!",
     "imageDisp": "flex",
     "image": "./assets/ending.jpg",
     "descriptionDisp": "block",
