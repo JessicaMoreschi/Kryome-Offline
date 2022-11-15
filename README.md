@@ -20,4 +20,4 @@ In addition to goals related to the game experience, such as solving the main mi
 ![img1](assets/01_IMG.jpg)
 ![img1](assets/02_IMG.jpg)
 ![img1](assets/03_IMG.jpg)
-![img1](assets/04_IMG.jpg)
+![img1](assets/04_IMG.jpg) 
