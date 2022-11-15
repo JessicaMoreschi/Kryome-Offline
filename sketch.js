@@ -29,7 +29,7 @@ let testonline = false;
 function setup() {
 
 window.alert(
-  "webapp di un gioco da tavolo ibrido (carte fisiche + app). Per simulare le carte, coprire la webcam o premere la barra spaziatrice. Link to repo: https://github.com/JessicaMoreschi/Kryome-Offline")
+  "webapp di un gioco da tavolo ibrido (carte fisiche + app). Per simulare le carte, coprire la webcam o premere la barra spaziatrice. Link to repo: https://github.com/JessicaMoreschi/Kryome-Offline. Use Chrome")
   //video
   video = createCapture(VIDEO);
   video.size(width / 2, height / 2);
