@@ -6,7 +6,7 @@ let drawIndex = 0;
 let blackBar = 0;
 
 //set card
-let cardCounter = -3;
+let cardCounter = -2; //put -3 to start with solon
 let card = false;
 //set level
 let currentLevel = 0;
@@ -27,6 +27,9 @@ let online;
 let testonline = false;
 //SETUP
 function setup() {
+
+window.alert(
+  "webapp di un gioco da tavolo ibrido (carte fisiche + app). Per simulare le carte, coprire la webcam o premere la barra spaziatrice")
   //video
   video = createCapture(VIDEO);
   video.size(width / 2, height / 2);
@@ -67,14 +70,15 @@ function setup() {
 //DRAW
 function draw() {
 
-  online = navigator.onLine;
-  console.log(online);
-
+  //TO PLAY ONLINE: (line below not commented)
+  online = false;
+  // TO PLAY OFFLINE: (line belows not commented)
+  // online = navigator.onLine;
   //check if the connection has changed
-  if (online != testonline) {
-    connectionAlterts();
-    testonline = online;
-  }
+  // if (online != testonline) {
+  //   connectionAlterts();
+  //   testonline = online;
+  // }
 
   //Detect color black
   let redTotal = 0;
@@ -220,6 +224,7 @@ function hideMyCard(n) {
     cardHtmlDiv.innerHTML = "";
     card = false;
   } else if (n == 'startLev1') {
+    showTopBar();
     showTorchPanel();
     cardHtmlDiv.innerHTML = "";
     card = false;
@@ -368,10 +373,7 @@ function hideMyCard(n) {
     cardHtmlDiv.innerHTML = "";
     card = false;
   }
-  //show torch popups
-  // else if (cardCounter == 4) { //numero a caso, solo una prova
-  //   torchHtmlDiv.innerHTML = dataRadar.alertResources.map(torchP);
-  // }
+
 
   testonline = online; //every time you close a panel reset testonline
 }
@@ -509,26 +511,22 @@ function openMessages() {
 function connectionAlterts(c) {
   //turn off connection alert
   if (online == true && currentLevel < 5) {
-    console.log("a");
     cardHtmlDiv.innerHTML = dataCard.alertConnectionOff.map(alertHTML);
-    document.getElementById("closeBtnId").disabled = true;
+    document.getElementById("closeBtnId").disabled = true; 
     document.getElementById("closeBtnId").style.opacity = "0.38";
   }
   else if (online == false && currentLevel < 5) {
-    console.log("b");
     document.getElementById("closeBtnId").disabled = false;
     document.getElementById("closeBtnId").style.opacity = "1";
   }
   //turn on connection alert
   else if (c=="end") {
-    console.log("c");
     cardHtmlDiv.innerHTML = dataCard.alertConnectionOn.map(alertHTML);
     document.getElementById("closeBtnId").disabled = true;
     document.getElementById("closeBtnId").style.opacity = "0.38";
     currentLevel == 5
   }
   else if (online == true && currentLevel == 5) {
-    console.log("d");
     document.getElementById("closeBtnId").disabled = false;
     document.getElementById("closeBtnId").style.opacity = "1";
   }
